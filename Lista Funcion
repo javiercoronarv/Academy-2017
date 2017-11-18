@@ -1,0 +1,21 @@
+def lista_funcion():
+	try:
+		lista = []
+		num = int(input('Por favor introduzca el número de elementos de la lista: '))
+		for i in range(num):
+			lista.append(int(input('Por favor ingrese un número entero para la lista: ')))
+
+		print(lista)
+		del(lista[0])
+		del(lista[-1])
+
+		for index,number in enumerate(lista):
+			if number % 2 == 0:
+				del(lista[index])
+
+		print(lista)
+
+	except ValueError:
+		print('Por favor seleccione un número entero.')
+
+lista_funcion()
