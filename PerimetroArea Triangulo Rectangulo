@@ -1,0 +1,16 @@
+import math
+
+def PerimetroArea():
+
+	a = float(input('Por favor ingrese la longitud de uno de los lados: '))
+	b = float(input('Por favor ingrese la longitud de uno de los lados: '))
+	c = float(input('Por favor ingrese la longitud de uno de los lados: '))
+
+	perimetro = a + b + c
+	semip = (1/2) * perimetro
+	area = math.sqrt(semip * (semip-a) * (semip-b) * (semip-c))
+
+	print('El perímetro del triángulo es de: {}'.format(perimetro))
+	print('El área del triángulo es de: {}'.format(area))
+
+PerimetroArea()
