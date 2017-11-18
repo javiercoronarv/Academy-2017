@@ -1,0 +1,38 @@
+import sqlite3
+
+class DB(object):
+
+	def conectar(self,query,query_input):
+		conexion = sqlite3.connect('school.db')
+		with conexion:
+			cursor = conexion.cursor()
+			cursor.execute(query,query_input)
+			return cursor.fetchall()
+
+	def muestra_estudiantes(self):
+		query = '''
+	SELECT DISTINCT	first_name,
+					last_name,
+					description
+	FROM students s JOIN student_courses st ON s.id = st.student_id
+	JOIN courses c ON st.course_id = c.id
+	ORDER BY description DESC
+	'''
+		query_input = ()
+		return self.conectar(query,query_input)
+
+
+	def muestra_maestros(self):
+		query = '''
+	SELECT DISTINCT	Name,	
+					first_name
+	FROM students s JOIN teachers t ON s.teacher_id = t.id
+	ORDER BY Name DESC
+	'''
+		query_input = ()
+		return self.conectar(query,query_input)
+
+	def agregar_estudiante(self, nid, nname, nlastname, nbirthdate, nteacher):
+		query = 'INSERT INTO students VALUES (?,?,?,?,?)'
+		query_input = (nid, nname, nlastname, nbirthdate, nteacher)
+		return self.conectar(query,query_input)
