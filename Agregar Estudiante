@@ -1,0 +1,10 @@
+import sqlite3
+
+conexion = sqlite3.connect('school.db')
+cursor = conexion.cursor()
+
+Estudiante = ( 6, 'Andrea', 'Castro', 1989-10-11, 1)
+
+cursor.execute('INSERT INTO students VALUES (?,?,?,?,?)', Estudiante)
+
+conexion.commit()
