@@ -1,0 +1,16 @@
+def Tuple():
+	num = int(input("Por favor selecciona el número de elementos del Set: "))
+	lista = []
+	input('Toma en cuenta que la lista creada será convertida en tupla.')
+	for i in range(num):
+		lista.append(int(input('Agrega un número a la lista: ')))
+
+	for i,a in enumerate(lista):
+		if a % 2 != 0:
+			del(lista[i])
+
+	tupla = set(lista)
+
+	print(tupla)
+
+Tuple()
