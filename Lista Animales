@@ -1,0 +1,29 @@
+def lista_animales():
+	try:
+		lista = []
+		num = int(input('Por favor introduzca el número de animales de la lista: '))
+		for i in range(num):
+			lista.append(input('Por favor ingrese un animal para la lista: '))
+
+		print(lista)
+		nuevo = input('Ingrese el nombre del animal a ingresar: ')
+		viejo = input('Ingrese el nombre del animal a reemplazar: ')
+		cuenta = 0
+
+		for i,e in enumerate(lista):
+			if viejo == e:
+				del(lista[i])
+				lista.insert(i,nuevo)
+				print(lista)
+				break
+			else:
+				cuenta += 1
+
+		if cuenta == len(lista):
+			print('Por favor seleccione un animal que se encuentre en la lista.')
+
+	except ValueError:
+		print('Por favor seleccione un animal que se encuentre dentro de la lista.')
+
+
+lista_animales() 
