@@ -1,0 +1,36 @@
+dic = {'Javier':'17 de agosto de 1989','Rodolgo':'13 de noviembre de 1980','Mariana':'28 de enero de 1995','Priscila':'6 de febrero de 1998','Sofía':'8 de diciembre de 1989'}
+
+def opciones_diccionario():
+    
+	try: 
+		while (True): 
+
+			print('''
+Por favor seleccione una de las siguientes opciones:
+1) Consultar el diccionario.
+2) Mostrar todo el catálogo.
+3) Salir del sistema.''')
+
+			opcion = int(input())
+
+			if opcion == 1:
+				nome = input('Por favor seleccione un nombre de la base de datos: ')
+				for i in dic:
+					if i == nome:
+						print('Nombre: {}, cumpleaños: {}'.format( nome, dic[nome]))
+						break
+					
+			elif opcion == 2:
+				for i in dic:
+					print('Nombre: {}, cumpleaños: {}'.format( i, dic[i]))
+
+
+			elif opcion == 3:
+				print('Gracias por ingresar al sistema. Hasta luego.')
+				break
+
+	except ValueError:
+		print('Por favor introduzca un valor válido.')
+        
+        
+opciones_diccionario()
