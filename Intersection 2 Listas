@@ -1,0 +1,32 @@
+def two_lists():
+	try: 
+
+		num_1 = int(input('Por favor introduce el número de elementos de la lista 1: '))
+		num_2 = int(input('Por favor introduce el número de elementos de la lista 1: '))
+		lista_1 = []
+		lista_2 = []
+		lista_3 = []
+
+		for i in range(num_1):
+			lista_1.append(int(input('Agrega un número a la lista 1 por favor: ')))
+
+		for i in range(num_2):
+			lista_2.append(int(input('Agrega un número a la lista 2 por favor: ')))
+
+		print('Lista 1: {}'.format(lista_1))
+		print('Lista 2: {}'.format(lista_2))
+
+		for i in lista_1:
+			for a in lista_2:
+				if a == i:
+					lista_3.append(a)
+					break
+
+		print('Lista con elementos en común: {}'.format(set(lista_3)))
+
+	except ValueError:
+		print('Por favor seleccione un número entero.')
+
+
+
+two_lists()
