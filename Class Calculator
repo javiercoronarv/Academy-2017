@@ -1,0 +1,26 @@
+
+class Calculator:
+	
+	a = 15
+	
+	def __init__(self, number):
+		self.number = number
+
+	def multiplicacion(self):
+		return self.number * self.a
+
+	def division(self):
+		return self.number / self.a
+
+	def suma(self):
+		return self.number + self.a
+
+	def resta(self):
+		return self.number - self.a
+
+a = Calculator(15)
+
+print(a.suma())
+print(a.resta())
+print(a.multiplicacion())
+print(a.division())
