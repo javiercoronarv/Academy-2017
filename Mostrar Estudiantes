@@ -1,0 +1,18 @@
+import sqlite3
+
+conexion = sqlite3.connect('school.db')
+cursor = conexion.cursor()
+
+cursor.execute('''
+	SELECT DISTINCT	first_name,
+					last_name,
+					description
+	FROM students s JOIN student_courses st ON s.id = st.student_id
+	JOIN courses c ON st.course_id = c.id
+	ORDER BY description DESC
+	''')
+
+estudiantes = cursor.fetchall()
+
+for estudiante in estudiantes:
+	print(estudiante)
