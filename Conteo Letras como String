@@ -1,0 +1,29 @@
+def conteo_letras():
+    
+    m = input('Introduce una palabra por favor: ')
+    m = list(m)
+    
+    for i,e in enumerate(m):
+        cuenta = 1
+        for inca, exa in enumerate(m): 
+            if e == exa:
+                if inca != i:
+                    cuenta += 1
+                
+        if cuenta > 1:
+            print('La letra es: {} y aparece {} veces.'.format(e,m.count(e)))
+            for b,a in enumerate(m):
+                if a == e:
+                    del(m[b])
+            for b,a in enumerate(m):
+                if a == e:
+                    del(m[b])
+            for b,a in enumerate(m):
+                if a == e:
+                    del(m[b])
+        
+        else:
+            print('La letra es: {} y aparece {} vez.'.format(e,m.count(e)))
+            
+
+conteo_letras()
